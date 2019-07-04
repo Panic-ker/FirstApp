@@ -26,14 +26,6 @@
     },
     {
       "userId": 1,
-      "email": "mail3@",
-      "password": "1",
-      "id": 6,
-      "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "completed": false
-    },
-    {
-      "userId": 1,
       "id": 7,
       "title": "illo expedita consequatur quia in",
       "completed": false
@@ -115,10 +107,9 @@
       "id": 22
     }
   ],
-
   "user": [
     {
-      "email": "mail@ma",
+      "email": "qwe",
       "password": "1"
     },
     {

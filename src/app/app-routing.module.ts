@@ -9,10 +9,10 @@ import{AuthGuard} from './auth.guard';
 
 
 const routes: Routes = [
-  { path: '', component: TodosComponent },
+  { path: '', component: TodosComponent, canActivate:[AuthGuard]  },
   { path: 'about', component: AboutComponent, canActivate:[AuthGuard] },
-  { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent,  }
+  { path: 'contact', component: ContactComponent, canActivate:[AuthGuard]  },
+  { path: 'login', component: LoginComponent   }
 ];
 
 @NgModule({
