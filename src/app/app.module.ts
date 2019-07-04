@@ -15,6 +15,7 @@ import { AddTodoComponent } from './components/todos/todoComponents/add-todo/add
 import { TodoService } from './services/todo.service';
 import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { from } from 'rxjs';
     HeaderComponent,
     TodoItemsComponent,
     AddTodoComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

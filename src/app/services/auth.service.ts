@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   // initializing the variables
-  private isLogStatus = false;
+  private isLogStatus = JSON.parse(localStorage.getItem('loginStatus') || 'false');
   userlist: Userlist[];
   userlist2: Userlist[];
 
@@ -23,11 +23,12 @@ export class AuthService {
 // changing status of login variable
   setLogin(value: boolean){
     this.isLogStatus=value;
+    localStorage.setItem('loginStatus',this.isLogStatus);
   }
 
   // emiting the changed status to auth guard
   get isLogin(){
-    return this.isLogStatus;
+    return JSON.parse(localStorage.getItem('loginStatus') || this.isLogStatus.toString());
   }
 
 

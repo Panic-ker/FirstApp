@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     ev.preventDefault();
     this.logincheck = this.auth.getUserDetails(this.email, this.password, this.userlist);
     if (this.logincheck) {
-       console.log("this.logincheck** ture****");
+       console.log("this.logincheck** true****");
        this.auth.setLogin(true);
         this.router.navigate(['about']);
       }

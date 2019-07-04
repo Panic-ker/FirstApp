@@ -5,6 +5,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import{AuthGuard} from './auth.guard';
 
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: '', component: TodosComponent, canActivate:[AuthGuard]  },
   { path: 'about', component: AboutComponent, canActivate:[AuthGuard] },
   { path: 'contact', component: ContactComponent, canActivate:[AuthGuard]  },
-  { path: 'login', component: LoginComponent   }
+  { path: 'login', component: LoginComponent   },
+  { path: 'logout', component: LogoutComponent   }
 ];
 
 @NgModule({
