@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import{AuthGuard} from './auth.guard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { TodoItemsComponent } from './components/todos/todoComponents/todo-items
 import { AddTodoComponent } from './components/todos/todoComponents/add-todo/add-todo.component';
 import { TodoService } from './services/todo.service';
 import { LoginComponent } from './components/login/login.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [TodoService],
+  providers: [TodoService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
