@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from '@angular/core';
+import { NgModule,Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoItemsComponent } from './components/todos/todoComponents/todo-items/todo-items.component';
 import { AddTodoComponent } from './components/todos/todoComponents/add-todo/add-todo.component';
+import { TodoService } from './services/todo.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { AddTodoComponent } from './components/todos/todoComponents/add-todo/add
     ContactComponent,
     HeaderComponent,
     TodoItemsComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
