@@ -1,3 +1,4 @@
-<p>
-  todos works!
-</p>
+<div>
+  <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+  <app-todo-items *ngFor="let enties of todos" [todo]="enties" (deleteTodo)="delTodo($event)"></app-todo-items>
+</div>
