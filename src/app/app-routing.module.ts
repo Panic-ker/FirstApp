@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TodosComponent } from './components/todos/todos.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { LoginComponent } from './components/login/login.component';
+import { CoreComponent } from './components/core/core.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { AuthGuard } from './auth.guard';
+import { AppComponent } from './app.component';
+
+
 
 
 const routes: Routes = [
-  { path: '', component: TodosComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent }
+  {
+    path: '',
+    component: CoreComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { path: 'login', component: AuthenticationComponent }
 ];
 
 @NgModule({
