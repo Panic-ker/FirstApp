@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,16 +9,20 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LogoutComponent implements OnInit {
 
+  @Output() hideHeader: EventEmitter<any> = new EventEmitter;
+
   constructor(private router: Router,
-              private auth: AuthService) { }
+    private auth: AuthService) { }
 
   ngOnInit() {
     console.log("*******logout*********")
-    localStorage.removeItem('loginStatus')   
-    this.auth.setLogin(false);  
+    this.auth.setLogin(false);
+    this.hideHeader.emit(false);
+    
+    localStorage.removeItem('loginStatus')
     this.router.navigate(['login']);
   }
 
-  
+
 
 }

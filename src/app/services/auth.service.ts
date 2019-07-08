@@ -20,14 +20,16 @@ export class AuthService {
   userlist2: Userlist[];
 
 
-// changing status of login variable
-  setLogin(value: boolean){
-    this.isLogStatus=value;
-    localStorage.setItem('loginStatus',this.isLogStatus);
+  // changing status of login variable
+  setLogin(value: boolean) {
+    this.isLogStatus = value;
+    localStorage.setItem('loginStatus', this.isLogStatus);
   }
 
+
+
   // emiting the changed status to auth guard
-  get isLogin(){
+  get isLogin() {
     return JSON.parse(localStorage.getItem('loginStatus') || this.isLogStatus.toString());
   }
 
@@ -42,7 +44,7 @@ export class AuthService {
   // check if user exists in the json
   getUserDetails(username, password, userlist) {
     this.fetchUserDetails().subscribe(data => this.userlist2 = data);
-   
+
     this.userlist2 = userlist;
     this.userlist2 = this.userlist2.filter(fil => fil.email == username)
 
