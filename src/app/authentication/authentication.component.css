@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: gainsboro ;
+  }
+  
+  .flex-container>div {
+    background-color: #f1f1f1;
+    color: white;
+  }
+
+
+  #authmain{
+    height: 100vh;
+  }
+
+  
+  #authmain1{
+    height: 100vh;
+  }
