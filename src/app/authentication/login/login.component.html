@@ -1,11 +1,11 @@
-<form class="form" (ngSubmit)="onSubmit($event)">
 
-  <input type="email" name="email"  [(ngModel)]="email"
-     placeholder="add email">
-     
-  <input type="password" name="password"  [(ngModel)]="password"
-  placeholder="add password">
+<form class="form" (ngSubmit)="onSubmit($event)" flex-layout="row">
 
-  <input type="submit" value="submit" >
+  <input type="email" name="email" [(ngModel)]="email" placeholder="add email"> <br />
+
+
+  <input type="password" name="password" [(ngModel)]="password" placeholder="add password"> <br />
+
+  <input  class="btn btn-primary"  type="submit" value="submit">
 
 </form>
